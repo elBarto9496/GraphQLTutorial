@@ -9,12 +9,16 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true
 }))
 
-mongoose.connect('mongodb+srv://ak2px:Akatti9496@gql-amogh.k1hve.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+app.get('/', (req, res) => {
+    res.send('Hello you\'re on the Hompage')
+})
+
+console.log('mongoose.connect(<<\'your connection String\'>>')
 mongoose.connection.once('open', () => {
     console.log('Connected to the DB')
 })
 
-app.listen(4000, () => {
+app.listen(3000, () => {
     console.log('now listening for requests')
 }
 );
